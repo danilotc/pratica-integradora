@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulário Interativo</title>
+    <style>
+        #campos, #resultado {
+            max-width: 300px;
+            border: 1px dashed #000000;
+            padding: 5px;
+            margin-bottom: 5px;
+        }
+        input {
+            margin-bottom: 5px;
+            width: 290px;
+        }
+    </style>
+    <script>
+        function pegarDados() {
+            var nome = document.getElementById('cNome').value;
+            var sobrenome = document.getElementById('cSobrenome').value;
+            var email = document.getElementById('cEmail').value;
+            var resultado = document.getElementById('resultado');
+
+            // usando recurso de template string: `${variavel}`
+            resultado.innerHTML = `
+                ${nome} ${sobrenome} <br>
+                ${email}
+            `;
+        }
+    </script>
+</head>
+<body>
+    <div id="campos">
+        <!-- 'c' antes do valor de cada id significa 'campo' -->
+        <input type="text" id="cNome" placeholder="Nome"><br>
+        <input type="text" id="cSobrenome" placeholder="Sobrenome"><br>
+        <input type="text" id="cEmail" placeholder="E-mail"><br>
+        <!-- botão com evento onclick chamando a função que pegará os dados -->
+        <button onclick="pegarDados();">Enviar Dados</button>
+    </div>
+    
+    <div id="resultado"></div>
+</body>
+</html>
