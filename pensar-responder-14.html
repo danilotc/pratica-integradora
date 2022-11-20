@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Pensar e Responder Aula 14</title>
+    <style>
+        div {
+            max-width: 178px;
+            border: 1px dashed black;
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+        input {margin-bottom: 5px;}
+    </style>
+    <script>
+        function pegarDados() {
+            let valor1 = Number(document.querySelector('#valor1').value);
+            let valor2 = Number(document.querySelector('#valor2').value);
+            let result = document.querySelector('#resposta');
+
+            if ((valor1 + valor2) > 10) {
+                result.textContent = "Valor acima de 10";
+            } else {
+                // apaga mensagem quando a soma não for acima de 10
+                result.textContent = "";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <input type="text" id="valor1" placeholder="Valor 1"><br>
+        <input type="text" id="valor2" placeholder="Valor 2"><br>
+        <button onclick="pegarDados();">Enviar Dados</button>
+    </div>
+    <div id="resposta"></div>
+</body>
+</html>
